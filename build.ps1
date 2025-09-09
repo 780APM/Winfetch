@@ -37,15 +37,15 @@ if (-not (Test-Path "bin")) {
 $tempBat = "temp_build.bat"
 @"
 @call "$vsPath"
-cl /EHsc /I include /Fe:bin\winfetch6.exe src\main.cpp src\system_info.cpp src\display.cpp src\config.cpp src\ascii_art.cpp /link kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib psapi.lib powrprof.lib wbemuuid.lib ws2_32.lib
+cl /EHsc /I include /Fe:bin\winfetch.exe src\main.cpp src\system_info.cpp src\display.cpp src\config.cpp src\ascii_art.cpp /link kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib psapi.lib powrprof.lib wbemuuid.lib ws2_32.lib
 "@ | Out-File -FilePath $tempBat -Encoding ASCII
 
 try {
     & cmd /c $tempBat
     if ($LASTEXITCODE -eq 0) {
         Write-Host "`nBuild successful!" -ForegroundColor Green
-        Write-Host "Executable is located at: bin\winfetch6.exe" -ForegroundColor Cyan
-        Write-Host "`nYou can now run: .\bin\winfetch6.exe" -ForegroundColor Yellow
+        Write-Host "Executable is located at: bin\winfetch.exe" -ForegroundColor Cyan
+        Write-Host "`nYou can now run: .\bin\winfetch.exe" -ForegroundColor Yellow
     } else {
         Write-Host "`nBuild failed!" -ForegroundColor Red
     }
