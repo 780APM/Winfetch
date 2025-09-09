@@ -2,6 +2,8 @@
 
 A Windows system information tool inspired by fastfetch, written in C++ with Windows API integration.
 
+<img src="Screenshots/Screenshot 2025-09-09 201609.png" width="49%" />
+
 ## Features
 
 - System Information: OS version, architecture, uptime
